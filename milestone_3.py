@@ -9,7 +9,6 @@ def check_guess(guess):
         print(f"Good guess {guess} is in the word!")
     else:
         print(f"Sorry, {guess} is not in the word. Try again.")
-#%%
 #Checks if your input is one character and its only aphabetical letters (No punctuation or numbers). 
 def ask_for_input():
     while True:
@@ -22,7 +21,6 @@ def ask_for_input():
            
 ask_for_input()
 
-# %%
 
 
 # %%
