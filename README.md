@@ -1,11 +1,29 @@
-# Hangman
-Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within a certain amount of attempts.
+# Python Hangman Game
 
-This is an implementation of the Hangman game, where the computer thinks of a word and the user tries to guess it. 
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-I imported python package, which come in handy to make my code more structured and easy to read.
-Created variables  for my game and included variables related to the game.
-One of the objectives was to check if the guessed character is in the word, which was I did this by defining 2 functions.
-One function iteratively checked if the input is a singular input with just the alphabetical letters.
-The other function checked if the input is a character within a word.
-I've also refined and optimised my code.
+## Description
+**Python Hangman Game** is a console-based word guessing game. Players attempt to build a word by guessing one letter at a time. For each incorrect guess, a part of a hangman figure gets drawn. The player wins if they guess the word before the hangman figure is completed. They lose if the figure is completed first.
+
+**Aim of the Project**: 
+To implement a basic text-based game in Python, familiarize with string manipulation, and practice using data structures and user input validation.
+
+**What I Learned**: 
+- Game development basics
+- String manipulation techniques in Python
+- Utilizing Python lists and dictionaries
+- Effective handling and feedback of user input 
+- Clear instructions and user feedback to ensure an immersive gameplay experience.
+- Designed with modularity in mind, allowing for easy addition of features or modifications.
+
+## Prerequisites
+- Python 3.11
+- Git (for cloning the repository and pushing it into github).
