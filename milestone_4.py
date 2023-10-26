@@ -1,35 +1,47 @@
 #%%
-from milestone import word
 import random
-import string
-from milestone import guess
-#%%
+
+
+
 class Hangman:
-    def __init__(self,word_list,num_lives):
-        num_lives = 5
-
-# The letters guessed correctly 
-
-# Checks if your guess is in the word.
-    def check_guess(guess):
-
-        if guess in word:
-            print(f"Good guess '{guess}' is in the word!")
+    def __init__(self,word_list,num_lives = 5):
+        self.num_lives = num_lives
+        self.word_list =  word_list
+        self.word = random.choice(self.word_list)
+        self.word_guessed = ["_"] * len(self.word)
+        self.num_letters = len(set(self.word))
+        self.list_of_guesses = []
+    
+    def check_guess(self,guess):
+        guess = guess.lower()
+        if guess in self.word:
+            print(f"Good guess {guess} is in the word!")
+            for i in range(len(self.word)):
+                    if self.word[i] == guess:
+                        self.word_guessed[i] = guess
+            self.num_letters -= 1
         else:
-            print(f"Sorry, {guess} is not in the word. Try again.")
-#Checks if your input is one character and its only aphabetical letters. 
-    def ask_for_input():
-        list_of_guesses = []  
+            self.num_lives -= 1 
+            print(f"Sorry, {guess} is not in the word.")
+            print(f"You have {self.num_lives} lives left.")
+
+    def ask_for_input(self):
         while True:
             guess = input("Input the first aplhabetical character:")
-            print(list_of_guesses)
-            if len(guess) != 1 and guess in string.ascii_letters:
+            if len(guess) != 1 and guess not in guess.isalpha():
                 print("Invalid letter, Please enter a single aplhabetical character")
-                
-            elif guess in list_of_guesses:
-                print("You already tried that letter!")
+            elif guess in self.list_of_guesses:
+                print("You've already entered this letter !")
             else:
-                check_guess(guess)
-                list_of_guesses.append(guess)
-    ask_for_input()   
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess)
+    
+words = ["mango","cherry","melon","apple","strawberry"]
+game = Hangman(words,5)
+game.ask_for_input()
+
+
+
+    
+
 # %%
